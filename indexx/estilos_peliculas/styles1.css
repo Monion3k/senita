@@ -1,0 +1,56 @@
+*{
+    font-family: cursive;
+}
+
+body{
+    background: rgb(4,29,140);
+    background: linear-gradient(90deg, rgba(4,29,140,1) 0%, rgba(26,0,108,1) 35%, rgba(0,0,0,1) 100%);
+}
+
+/* Estilos para los logos pequeños en la esquina superior derecha */
+.logo-peque, .logito {
+    position: absolute;
+    top: 10px;
+}
+
+.logo-peque {
+    right: 50px; /* Ajusta esta distancia para separar los logos */
+}
+
+.logito {
+    right: 10px; /* Ajusta esta distancia para separar los logos */
+}
+
+/* Estilos para la página de detalles de la película */
+.detalle-pelicula {
+    display: flex;
+    margin: 20px auto;
+    color:whitesmoke;
+}
+
+.detalle-imagen img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.detalle-info {
+    flex: 1;
+    margin-left: 20px;
+    color: whitesmoke;
+}
+
+.detalle-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.detalle-info p {
+    font-size: 25px;
+    margin: 0;
+}
+
+.detalle-info ul{
+    list-style: none;
+    font-size: 25px;
+    margin: 0pc;
+}

@@ -1,0 +1,245 @@
+*{
+    font-family: cursive;
+}
+
+body{
+    background: rgb(4,29,140);
+    background: linear-gradient(90deg, rgba(4,29,140,1) 0%, rgba(26,0,108,1) 35%, rgba(0,0,0,1) 100%);
+}
+
+/* Estilos para los logos pequeños en la esquina superior derecha */
+.logo-peque, .logito {
+    position: absolute;
+    top: 10px;
+}
+
+.logo-peque {
+    right: 50px; /* Ajusta esta distancia para separar los logos */
+}
+
+.logito {
+    right: 10px; /* Ajusta esta distancia para separar los logos */
+}
+
+
+.log{
+    background-color: whitesmoke;
+    padding: 1px;
+    margin: 150px;
+    border-radius: 22px;
+}
+
+.contenedor {
+    text-align: center;
+}
+  
+.lista-en-linea {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+}
+  
+.lista-en-linea li {
+    display: inline-block;
+    margin-right: 10px;
+    color: whitesmoke;
+}
+
+.lista-en-linea .categoria {
+    color: #FFFFFF; 
+    text-decoration: none;
+}
+
+.lista-en-linea .categoria:visited {
+    color: #A0A0A0;
+}
+
+.lista-en-linea .categoria:hover {
+    color: #00FF00;
+}
+
+
+.search-container {
+    display: flex;
+    height: 0px;
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.search-form {
+    display: flex;
+    padding: 1pc;
+}
+  
+.search-input {
+    display: flex;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Estilos para el modo oscuro */
+.modo-oscuro {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Estilos para el menú emergente de configuración */
+.menu-config {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.mostrar-menu {
+    display: block;
+}
+
+.menu-config ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.menu-config li {
+    margin: 5px 0;
+}
+
+.menu-config a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-config a:hover {
+    color: #007bff;
+}
+
+/* Estilos para el catálogo de películas */
+.catalogo {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.pelicula {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 calc(25% - 20px);
+}
+
+.pelicula img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.detalles {
+    margin-top: 10px;
+}
+
+.detalles h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.detalles p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Estilos para las imágenes en los recuadros */
+.pelicula img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilos para la burbuja de información */
+.info-creador {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.burbuja {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Estilos para el pop-up de información */
+.popup-info {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.popup-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.popup-info p {
+    font-size: 14px;
+    margin: 0;
+}
+
+#cerrar-popup {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.burbuja {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.burbuja img {
+    width: 30px;
+    height: 30px;
+}

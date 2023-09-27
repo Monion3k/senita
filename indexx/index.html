@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Peliculas Bizcolocho</title>
+</head>
+<body>
+    <div class="logo-peque">
+        <img src="config.png" alt="Logo Pequeño" width="30px">
+    </div>
+    <div class="logito">
+        <img src="close.png" alt="Logo Pequeño" width="30px">
+    </div>    
+    
+    <div class="log">
+        <header>
+            <nav>
+                <img src="Disney+.png" width="150px">
+                <form class="search-form">
+                    <input type="text" class="search-input" placeholder="Buscar...">
+                    <button type="submit" class="search-button">Buscar</button>
+                    <div class="search-container">
+                </form>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <br>
+
+    <div class="contenedor">
+        <ul class="lista-en-linea">
+            <li><a href="categorias/accion.html" data-target="accion" class="categoria">Acción</a></li>
+            <li><a href="#" data-target="comedia" class="categoria">Comedia</a></li>
+            <li><a href="#" data-target="familiar" class="categoria">Familiar</a></li>
+            <li><a href="#" data-target="infantiles" class="categoria">Infantiles</a></li>
+            <li><a href="#" data-target="documentales" class="categoria">Documentales</a></li>
+        </ul>
+    </div>
+
+    <div class="catalogo">
+        <div class="pelicula">
+        <a href="piratascar.html" class="pelicula">
+            <img src="piratascaribeña.png" width="500px" alt="Película 1">
+            <div class="detalles">
+                <h3>Piratas del Caribe: La Maldición del Perla Negra</h3>
+                <p>Categoría: Acción</p>
+                <p>Edad Mínima: PG-13+</p>
+                <p>Año de Publicación: 2003</p>
+            </div>
+        </a>
+        </div>
+        <div class="pelicula">
+            <a href="unanoche.html" class="pelicula">
+            <img src="unanoche.png" width="500px" alt="Película 2">
+            <div class="detalles">
+                <h3>Una Noche En El Museo</h3>
+                <p>Categoría: Comedia</p>
+                <p>Clasificación: (PG) 7+</p>
+                <p>Año de Publicación: 2006</p>
+            </div>
+            </a>
+        </div>
+        <div class="pelicula">
+            <a href="moana.html" class="pelicula">
+            <img src="moana.png" width="500px" alt="Película 3">
+            <div class="detalles">
+                <h3>Moana</h3>
+                <p>Categoria: Infantil</p>
+                <p>Clasificación: PG</p>
+                <p>Año de Publicación: 2016</p>
+            </div>
+            </a>
+        </div>
+
+    </div>
+    
+
+
+    <script>
+        const enlacesCargaDinamica = document.querySelectorAll('.lista-en-linea a');
+        const contenidoDinamico = document.getElementById('contenido-dinamico');
+    
+        enlacesCargaDinamica.forEach(enlace => {
+            enlace.addEventListener('click', e => {
+                e.preventDefault();
+    
+                const target = enlace.getAttribute('href'); // Obtiene el valor del atributo "href"
+                
+                // Realiza una solicitud AJAX para cargar el contenido del archivo
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', target, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        contenidoDinamico.innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.send();
+            });
+        });
+    </script>
+    
+
+    <script>
+        const enlaces = document.querySelectorAll('.lista-en-linea a');
+        const contenidos = document.querySelectorAll('.content');
+    
+        enlaces.forEach(enlace => {
+            enlace.addEventListener('click', e => {
+                e.preventDefault();
+    
+                const target = enlace.getAttribute('data-target');
+                contenidos.forEach(contenido => {
+                    contenido.style.display = 'none';
+                });
+                
+                const contenidoMostrar = document.getElementById(target);
+                contenidoMostrar.style.display = 'block';
+            });
+        });
+    </script>
+
+    <script>
+        const logoConfig = document.querySelector('.logo-peque img');
+        const body = document.body;
+    
+        logoConfig.addEventListener('click', () => {
+            body.classList.toggle('modo-oscuro');
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoConfig = document.querySelector('.logo-peque img');
+            const menuConfig = document.getElementById('menu-config');
+
+            logoConfig.addEventListener('click', () => {
+                menuConfig.classList.toggle('mostrar-menu');
+            });
+        });
+    </script>    
+    
+    <script>
+        const logoCerrar = document.querySelector('.logito img');
+    
+        logoCerrar.addEventListener('click', () => {
+            const confirmacion = confirm('¿Deseas cerrar sesión?');
+            if (confirmacion) {
+                window.location.href = 'login.html'; // Cambia "login.html" por la página de inicio de sesión
+            }
+        });
+    </script>
+    
+    <div id="menu-config" class="menu-config">
+        <ul>
+            <li><a href="#">Cambiar a Modo Oscuro</a></li>
+            <li><a href="#">Cambiar a Modo Claro</a></li>
+        </ul>
+    </div>
+
+    <div class="info-creador">
+        <div class="burbuja" id="burbuja-info">
+            <img src="preguntin.png" width="25px" alt="Info">
+        </div>
+        <div class="popup-info" id="popup-info">
+            <h3>Desarrollado Por:</h3>
+            <p>Juan Monion</p>
+            <h3>Diseño Por:</h3>
+            <p>Yula Ferrer</p>
+            <button id="cerrar-popup">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        const burbujaInfo = document.getElementById('burbuja-info');
+        const popupInfo = document.getElementById('popup-info');
+        const cerrarPopup = document.getElementById('cerrar-popup');
+    
+        // Mostrar el pop-up al hacer clic en la burbuja
+        burbujaInfo.addEventListener('click', () => {
+            popupInfo.style.display = 'block';
+        });
+    
+        // Cerrar el pop-up al hacer clic en el botón "Cerrar"
+        cerrarPopup.addEventListener('click', () => {
+            popupInfo.style.display = 'none';
+        });
+    </script>
+    
+    
+</body>
+</html>
