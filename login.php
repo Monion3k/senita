@@ -45,7 +45,7 @@
         echo "Datos Correctos";
     }
 }
-    #Terminar de enlazar los datos y mostrar errores#
+    #Hallar la manera de mostrar los errores cometidos por el usuario al momento de redactar el formulario#
 ?>
 
   <div class="login-container">
@@ -54,11 +54,14 @@
     <form action="indexx/index.html" method="post">
       <div class="form-group">
         <label for="username">Usuario:</label>
-        <input type="text" name="nombre">
+        <input type="text" name="nombre" placeholder="Fulanito de Tal">
       </div>
+    <div class="form-group">
+        <label for="email">Correo Electronico:</label>
+      <input type="mail" name="email" placeholder="fulano@example.com">
       <div class="form-group">
         <label for="password">Contraseña:</label>
-        <input type="password" name="password">
+        <input type="password" name="password" placeholder="¡Debe tener más de 7 carácteres!">
       </div>
       <button type="submit">Iniciar sesión</button>
     </form>
@@ -72,6 +75,6 @@
       body.classList.toggle('modo-oscuro');
   });
 </script>
-<script src="scripts.js"></script>
+
 </body>
 </html>
