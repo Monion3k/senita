@@ -45,7 +45,7 @@
         echo "Datos Correctos";
     }
 }
-    #Falta enlazar los datos#
+    #Terminar de enlazar los datos y mostrar errores#
 ?>
 
   <div class="login-container">
